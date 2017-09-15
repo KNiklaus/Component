@@ -101,7 +101,7 @@ public class SwitchTagView extends LinearLayout {
         mTvBasketball = addView(mLeftTagName);
         mTvFootball = addView(mRightTagName);
 
-        setCheck(mSelectIndex);
+        setSelect(mSelectIndex);
         initAnim();
         initListener();
     }
@@ -126,7 +126,7 @@ public class SwitchTagView extends LinearLayout {
      * 设置选中与未选中的样式
      * @param selectIndex
      */
-    private void setCheck(int selectIndex) {
+    private void setSelect(int selectIndex) {
         if (selectIndex == TYPE_BASKETBALL) {
             mTvBasketball.setTextColor(mSelectTextColor);
             mTvBasketball.setBackgroundResource(mSelectTagBackgroundResource);
@@ -163,8 +163,8 @@ public class SwitchTagView extends LinearLayout {
      * 外界调用选中索引
      * @param isBasketball
      */
-    public void setCheck(boolean isBasketball) {
-        setCheck(isBasketball ? TYPE_BASKETBALL : TYPE_FOOTBALL);
+    public void setSelect(boolean isBasketball) {
+        setSelect(isBasketball ? TYPE_BASKETBALL : TYPE_FOOTBALL);
     }
 
     /**
@@ -260,7 +260,7 @@ public class SwitchTagView extends LinearLayout {
         SaveState SaveState = (SaveState) state;
         super.onRestoreInstanceState(SaveState.getSuperState());
         if (mSelectIndex != SaveState.status) {
-            setCheck(SaveState.status);
+            setSelect(SaveState.status);
         }
         mSelectIndex = SaveState.status;
     }
@@ -304,12 +304,12 @@ public class SwitchTagView extends LinearLayout {
         @Override
         public void onClick(View v) {
             if (v == mTvBasketball && mSelectIndex != TYPE_BASKETBALL) {
-                setCheck(TYPE_BASKETBALL);
+                setSelect(TYPE_BASKETBALL);
                 if (mOnSelectListener != null) {
                     mOnSelectListener.setSelect(true);
                 }
             } else if (v == mTvFootball && mSelectIndex != TYPE_FOOTBALL) {
-                setCheck(TYPE_FOOTBALL);
+                setSelect(TYPE_FOOTBALL);
                 if (mOnSelectListener != null) {
                     mOnSelectListener.setSelect(false);
                 }
