@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchTagView">
+        <attr name="leftTagName" format="string"/>
+        <attr name="rightTagName" format="string"/>
+        <attr name="selectTextColor" format="color"/>
+        <attr name="unSelectTextColor" format="color"/>
+        <attr name="selectTagBackgroundResource" format="reference"/>
+        <attr name="backgroundResource" format="reference"/>
+    </declare-styleable>
+</resources>
