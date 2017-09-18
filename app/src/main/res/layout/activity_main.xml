@@ -5,15 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
     tools:context="com.example.niklaus.component.MainActivity">
 
-    <com.example.library.switchview.SwitchTagView
-        android:id="@+id/switch_view"
-        android:layout_width="wrap_content"
+    <!--<com.example.library.switchview.SwitchTagView-->
+        <!--android:id="@+id/switch_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:leftTagName="篮球"-->
+        <!--app:rightTagName="足球"-->
+        <!--/>-->
+    <!--<com.example.niklaus.dagger.widget.BottomBar-->
+        <!--android:id="@+id/bottom_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"/>-->
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:leftTagName="篮球"
-        app:rightTagName="足球"
+        android:onClick="btnSwitchTagView"
+        android:text="切换标签"/>
+    <Button
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnBottomBar"
+        android:text="底部导航栏"
         />
-
 </LinearLayout>

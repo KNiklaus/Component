@@ -1,35 +1,25 @@
 package com.example.niklaus.dagger.widget
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
 import android.support.annotation.DrawableRes
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
-import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.niklaus.dagger.R
+import com.example.library.util.DensityUtil
 
 /**
  * Created by Niklaus on 2017/9/1.
  */
-class BottomBarTab : FrameLayout/*constructor(
-        context: Context,
-        text: CharSequence,
-        textSelectColor: Int,
-        textUnSelectColor: Int,
-        @DrawableRes iconSelect: Int,
-        @DrawableRes iconUnSelect: Int,
-        onSelectListener: OnSelectListener) : FrameLayout(context,attr,defStyle)*/ {
+class BottomBarTab : FrameLayout {
 
     private lateinit var mImageView: ImageView
     private lateinit var mTextView: TextView
-    private lateinit var mTvMsg: TextView
     private var mTextSelectColor: Int = 0
     private var mTextUnSelectColor: Int = 0
     private var mIconSelect: Int = 0
@@ -74,22 +64,10 @@ class BottomBarTab : FrameLayout/*constructor(
         mOnSelectOnListener = onSelectListener
         mText = text
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            var typedArray = context.obtainStyledAttributes(IntArray(android.R.attr.selectableItemBackgroundBorderless)) as TypedArray
-//            var drawable = typedArray.getDrawable(0)
-//            background = drawable
-//            typedArray.recycle()
-            var typedOut : TypedValue = TypedValue()
-            getContext().theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, typedOut, true)
+            var typedOut = TypedValue()
+            context.theme.resolveAttribute(android.R.attr.selectableItemBackground, typedOut, true)
             setBackgroundResource(typedOut.resourceId)
         }
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            var typedArray = context.obtainStyledAttributes(kotlin.IntArray(android.R.attr.selectableItemBackgroundBorderless))
-//            var drawable = typedArray.getDrawable(0)
-//            background = drawable
-//            typedArray.recycle()
-//        }
-
 
         var linearLayout = LinearLayout(context)
         linearLayout.orientation = LinearLayout.VERTICAL
@@ -99,50 +77,22 @@ class BottomBarTab : FrameLayout/*constructor(
         paramas.gravity = Gravity.CENTER_HORIZONTAL
         linearLayout.layoutParams = paramas
 
-        val dp32 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32f, resources.displayMetrics)
+        val dp32 = DensityUtil.dip2px(context,32f)
         mImageView = ImageView(context)
-        mImageView.layoutParams = LayoutParams(dp32.toInt(), dp32.toInt())
+        mImageView.layoutParams = LayoutParams(dp32, dp32)
         linearLayout.addView(mImageView)
 
         mTextView = TextView(context)
         mTextView.text = mText
         var tvParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        mTextView.textSize = 10f
+        mTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP,10f)
         mTextView.layoutParams = tvParams
         linearLayout.addView(mTextView)
 
         addView(linearLayout)
 
-        val min = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20f, resources.displayMetrics)
-        val dp17 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 17f, resources.displayMetrics)
-        val dp14 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14f, resources.displayMetrics)
-        mTvMsg = TextView(context)
-        mTvMsg.setBackgroundResource(R.drawable.segment_bg_msg_bubble)
-        mTvMsg.setTextColor(Color.WHITE)
-        mTvMsg.minHeight = min.toInt()
-        mTvMsg.minWidth = min.toInt()
-        mTvMsg.gravity = Gravity.CENTER
-        var msgParams = FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,min.toInt())
-//        msgParams.leftMargin = dp17.toInt()
-//        msgParams.bottomMargin = dp14.toInt()
-        msgParams.gravity = Gravity.CENTER
-        mTvMsg.layoutParams = msgParams
-        mTvMsg.visibility = View.GONE
-        addView(mTvMsg)
-
         isSelected = false
     }
-
-    fun setMsgCount(count: Int) : BottomBarTab{
-        if (count == 0) {
-            mTvMsg.visibility = View.GONE
-        } else {
-            mTvMsg.text = count.toString()
-            mTvMsg.visibility = View.VISIBLE
-        }
-        return this
-    }
-
 
     override fun setSelected(selected: Boolean) {
         super.setSelected(selected)
