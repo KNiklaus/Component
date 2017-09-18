@@ -230,7 +230,7 @@ public class SwitchTagView extends LinearLayout {
         animate()
                 .setDuration(300)
                 .setInterpolator(mInterpolator)
-                .translationY(show ? 0 : DensityUtil.dip2px(mContext, 24 + 8) + getHeight())
+                .translationY(show ? 0 : getHeight())
                 .start();
         mAnimStatus = show ? STATUS_SHOWING : STATUS_HIDING;
     }
