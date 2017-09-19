@@ -4,4 +4,6 @@
     <color name="yellow_fb0">#FFBB00</color>
     <color name="black_9">#999999</color>
     <color name="color_white_d9">#D9D9D9</color>
+    <color name="dimpopupwindow_normal_text">#333333</color>
+    <color name="dimpopupwindow_segment_divider">#E9E9E9</color>
 </resources>

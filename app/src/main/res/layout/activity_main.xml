@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
+    android:scrollbars="none"
     tools:context="com.example.niklaus.component.MainActivity">
-
-    <!--<com.example.library.switchview.SwitchTagView-->
-        <!--android:id="@+id/switch_view"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:leftTagName="篮球"-->
-        <!--app:rightTagName="足球"-->
-        <!--/>-->
-    <!--<com.example.niklaus.dagger.widget.BottomBar-->
-        <!--android:id="@+id/bottom_bar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"/>-->
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnSwitchTagView"
-        android:text="切换标签"/>
-    <Button
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnBottomBar"
-        android:text="底部导航栏"
-        />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnSwitchTagView"
+            android:text="切换标签"/>
+        <Button
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnBottomBar"
+            android:text="底部导航栏"
+            />
+        <Button
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="底部PopupWindow"
+            android:onClick="btnBottomPopupWindow"/>
+    </LinearLayout>
+</ScrollView>

@@ -19,4 +19,8 @@ public class MainActivity extends AppCompatActivity {
     public void btnBottomBar(View view) {
         startActivity(new Intent(this,BottomBarActivity.class));
     }
+
+    public void btnBottomPopupWindow(View view) {
+        startActivity(new Intent(this,DimPopupWindowActivity.class));
+    }
 }

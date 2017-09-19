@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimpopupwindow_standard_margin">16dp</dimen>
+    <dimen name="dimpopupwindow_titlebar_default_divider_size">0.7dp</dimen>
+    <dimen name="dimpopupwindow_normal_btn_height">45dp</dimen>
+</resources>
