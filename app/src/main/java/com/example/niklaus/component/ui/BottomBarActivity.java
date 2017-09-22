@@ -1,4 +1,4 @@
-package com.example.niklaus.component;
+package com.example.niklaus.component.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,8 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.niklaus.component.fragment.AddPeopleFragment;
-import com.example.niklaus.component.fragment.HomeFragment;
+import com.example.niklaus.component.R;
+import com.example.niklaus.component.ui.fragment.AddPeopleFragment;
+import com.example.niklaus.component.ui.fragment.HomeFragment;
 import com.example.niklaus.dagger.widget.BottomBar;
 import com.example.niklaus.dagger.widget.BottomBarTab;
 

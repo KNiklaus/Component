@@ -1,4 +1,4 @@
-package com.example.niklaus.component;
+package com.example.niklaus.component.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.library.dimpopupwindow.BottomLeftRightSheetPopWindow;
+import com.example.niklaus.component.R;
 
 /**
  * Created by Niklaus on 2017/9/19.

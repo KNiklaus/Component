@@ -1,4 +1,4 @@
-package com.example.niklaus.component.fragment;
+package com.example.niklaus.component.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,15 +13,15 @@ import com.example.niklaus.component.R;
  * Created by Niklaus on 2017/9/18.
  */
 
-public class AddPeopleFragment extends Fragment {
-    public static AddPeopleFragment newInstance() {
-        return new AddPeopleFragment();
+public class HomeFragment extends Fragment {
+    public static HomeFragment newInstance() {
+        return new HomeFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_addpeople, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
     }
 }
